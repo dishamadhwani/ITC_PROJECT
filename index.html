@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Bakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <header class="header-section">
+        <div class="header-overlay">
+            <h1>THE GOLDEN BAKERY</h1>
+            <p class="tagline">Baking Moments of Pure Joy</p>
+            <button class="explore-btn" onclick="window.scrollTo({top: 750, behavior: 'smooth'})">Explore Menu</button>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <button onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+        <div class="cart-box">
+            <span><b id="cartCount">0</b> Items</span>
+            <span>| Total: <b>PKR <span id="totalPrice">0</span></b></span>
+            <button class="checkout-btn" onclick="checkout()">Check Out</button>
+        </div>
+    </nav>
+
+    <main class="product-grid" id="products">
+
+        <div class="card">
+            <img src="https://bakewithzoha.com/wp-content/uploads/2024/09/red-velvet-cake-featured-1.jpg" alt="Red Velvet">
+            <div class="card-body">
+                <h3>Red Velvet Cake</h3>
+                <p>Soft layers with smooth cream cheese frosting</p>
+                <p class="price"><b>PKR 2500</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Red Velvet Cake', 2500)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Red Velvet Cake', 2500)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ytimg.com/vi/gh2ekOIvGBg/maxresdefault.jpg" alt="Chocolate Mousse">
+            <div class="card-body">
+                <h3>Triple Chocolate Mousse Cake</h3>
+                <p>Three layers of rich chocolate mousse</p>
+                <p class="price"><b>PKR 2500</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Triple Chocolate Mousse Cake', 2500)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Triple Chocolate Mousse Cake', 2500)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.cakewalk.ae/uploads/p_products/dark-chocolate-truffle-web.jpg" alt="Mirror Cake">
+            <div class="card-body">
+                <h3>Chocolate Royal Mirror Cake</h3>
+                <p>Perfectly glazed for chocolate lovers</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Chocolate Royal Mirror Cake', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Chocolate Royal Mirror Cake', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://assets.indolj.io/upload/1673695125-rafelo-min.jpg" alt="Rafaelo">
+            <div class="card-body">
+                <h3>Rafaelo Cake</h3>
+                <p>Creamy coconut cake with Rafaelo bites</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Rafaelo Cake', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Rafaelo Cake', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://layers.pk/wp-content/uploads/2021/11/Lotus.jpg" alt="Lotus Cake">
+            <div class="card-body">
+                <h3>Premium Lotus Cake</h3>
+                <p>Biscoff spread with cream cheese frosting</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Premium Lotus Cake', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Premium Lotus Cake', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2684556/pexels-photo-2684556.jpeg" alt="Honey Cake">
+            <div class="card-body">
+                <h3>Honey Crumb Cake</h3>
+                <p>Pure honey bliss in every single bite</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Honey Crumb Cake', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Honey Crumb Cake', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://hbtbakery.com/wp-content/uploads/2023/10/HBT_compressed-1_page-0131.jpg" alt="Black Forest">
+            <div class="card-body">
+                <h3>Black Forest Cake</h3>
+                <p>Chocolate layers with cherries and cream</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Black Forest Cake', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Black Forest Cake', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://bkmedia.bakingo.com/sq-pineapple-cake0022pifr-AAA_1.jpg?tr=w-665,h-665,dpr-1.5&q=50" alt="Pineapple">
+            <div class="card-body">
+                <h3>Pineapple Gateau</h3>
+                <p>Sunshine in a cake with a nutty crunch</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Pineapple Gateau', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Pineapple Gateau', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=1974&auto=format&fit=crop" alt="Ferrero">
+            <div class="card-body">
+                <h3>Ferrero Rocher Cupcake</h3>
+                <p>Chocolate hazelnut delight with Ferrero</p>
+                <p class="price"><b>PKR 1800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Ferrero Cupcake', 1800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Ferrero Cupcake', 1800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://bonnibakery.com/wp-content/uploads/2024/03/Chocolate-Cupcakes_52.jpg.webp" alt="Chocolate Cupcake">
+            <div class="card-body">
+                <h3>Chocolate Cupcake</h3>
+                <p>Rich chocolate sponge with velvety frosting</p>
+                <p class="price"><b>PKR 800</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Chocolate Cupcake', 800)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Chocolate Cupcake', 800)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://static.tossdown.com/images/ac8f4b5a-761d-401b-a543-ac62b283f893.jpg" alt="Shahi Biscuit">
+            <div class="card-body">
+                <h3>Shahi Biscuit Box</h3>
+                <p>Handmade with 100% pure desi butter</p>
+                <p class="price"><b>PKR 850</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Shahi Biscuit Box', 850)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Shahi Biscuit Box', 850)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.abakingjourney.com/wp-content/uploads/2018/04/Almond-Cookies-Feature-1.jpg" alt="Almond">
+            <div class="card-body">
+                <h3>Almond Macaroons</h3>
+                <p>Traditional aroma of real desi butter</p>
+                <p class="price"><b>PKR 850</b></p>
+                <div class="buttons">
+                    <button class="add-btn" onclick="addToCart('Almond Macaroons', 850)">Add to Cart</button>
+                    <button class="buy-btn" onclick="buyNow('Almond Macaroons', 850)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="sideCart" class="side-cart">
+        <div class="cart-header">
+            <h2>Your Tray</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cartItemsList" class="cart-items-body">
+            <p class="empty-msg">Your tray is empty!</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>PKR <span id="sidebarTotal">0</span></span>
+            </div>
+            <button class="sidebar-checkout-btn" onclick="checkout()">Check Out Now</button>
+        </div>
+    </div>
+
+    <button class="floating-cart-btn" onclick="toggleCart()">
+        <span class="cart-icon">🛒</span>
+        <span id="floatingCartCount">0</span>
+    </button>
+
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-icon">✨</span>
+                <h2 id="modalTitle">Notification</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Your message goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-close-btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h5>&copy; 2026 The Golden Bakery | All Rights Reserved</h5>
+        <p><b>Email</b>: contact@goldenbakery.com | <b>Address</b>: DHA phase 8 Karachi Pakistan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
